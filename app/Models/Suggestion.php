@@ -26,6 +26,7 @@ class Suggestion extends Model
     {
         return [
             'status' => SuggestionStatus::class,
+            'created_at' => 'datetime',
         ];
     }
 
@@ -43,5 +44,10 @@ class Suggestion extends Model
     public function voteCount()
     {
         return $this->votes()->count();
+    }
+
+    public function createdAtHuman(): string
+    {
+        return $this->created_at->diffForHumans();
     }
 }

@@ -15,19 +15,29 @@
             @vite(['resources/css/app.css', 'resources/js/app.js'])
         @endif
     </head>
-    <body class="bg-gray-800 text-white">
+    <body class="bg-gray-900 text-white min-h-screen">
         <header>
-            <nav class="w-[95%] max-w-[1000px] mx-auto flex justify-between items-center">
+            <nav class="w-[95%] max-w-[750px] mx-auto flex justify-between items-center">
                 <a href="{{ route('home.index') }}" class="text-2xl font-bold">
                     Suggestions
                 </a>
             </nav>
         </header>
-        <main class="w-[95%] max-w-[1000px] mx-auto">
-        {{ $slot }}
+        <main class="w-[95%] max-w-[750px] mx-auto bg-gray-600 divide-y-2 divide-gray-400 rounded-md overflow-hidden">
+            <header class="p-4">
+                <nav class="flex gap-x-4">
+                    <a href="/" class="py-3 px-4 bg-transparent text-gray-200 text-sm font-light rounded-sm cursor-pointer hover:bg-gray-700">
+                        Working On
+                    </a>
+                    <a href="/" class="py-3 px-4 bg-transparent text-gray-200 text-sm font-light rounded-sm cursor-pointer hover:bg-gray-700">
+                        Finished
+                    </a>
+                </nav>
+            </header>
+            {{ $slot }}
         </main>
         <footer>
-            <div class="w-[95%] max-w-[1000px] mx-auto">
+            <div class="w-[95%] max-w-[750px] mx-auto">
                 Suggestions App
             </div>
         </footer>

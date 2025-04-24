@@ -14,10 +14,20 @@ enum SuggestionStatus: string
     public function label(): string
     {
         return match ($this) {
-            self::Pending => 'Pending',
-            self::Planning => 'Planning',
-            self::InProgress => 'In Progress',
-            self::Finished => 'Finished',
+            self::Pending => __('Pending'),
+            self::Planning => __('Planning'),
+            self::InProgress => __('In Progress'),
+            self::Finished => __('Finished'),
+        };
+    }
+
+    public function color(): string
+    {
+        return match ($this) {
+            self::Pending => 'bg-yellow-600',
+            self::Planning => 'bg-red-600',
+            self::InProgress => 'bg-blue-600',
+            self::Finished => 'bg-green-600',
         };
     }
 

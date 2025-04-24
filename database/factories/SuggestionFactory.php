@@ -19,7 +19,7 @@ class SuggestionFactory extends Factory
      */
     public function definition(): array
     {
-        $title = fake()->title();
+        $title = fake()->sentence(3);
         return [
             'title' => $title,
             'slug' => Str::slug($title),

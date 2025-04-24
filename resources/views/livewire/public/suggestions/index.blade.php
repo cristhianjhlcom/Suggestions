@@ -1,4 +1,3 @@
 <div>
-    <h1>Suggestions</h1>
-    <p>{{ $title }}</p>
+    <livewire:public.suggestions.table />
 </div>
