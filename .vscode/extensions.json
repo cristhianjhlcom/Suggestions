@@ -1,0 +1,17 @@
+{
+    "recommendations": [
+        "m1guelpf.better-pest",
+        "GitHub.github-vscode-theme",
+        "eamodio.gitlens",
+        "xabikos.JavaScriptSnippets",
+        "laravel.vscode-laravel",
+        "open-southeners.laravel-pint",
+        "cierra.livewire-vscode",
+        "bmewburn.vscode-intelephense-client",
+        "junstyle.php-cs-fixer",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "stivo.tailwind-fold",
+        "wayou.vscode-todo-highlight"
+    ]
+}
