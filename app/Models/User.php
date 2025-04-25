@@ -26,14 +26,6 @@ final class User extends Authenticatable
         'remember_token',
     ];
 
-    protected function casts(): array
-    {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
-    }
-
     public function suggestions(): HasMany
     {
         return $this->hasMany(Suggestion::class);
@@ -43,5 +35,13 @@ final class User extends Authenticatable
     {
         return $this->belongsToMany(Suggestion::class, 'suggestion_votes')
             ->withPivot('voted_at');
+    }
+
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+        ];
     }
 }

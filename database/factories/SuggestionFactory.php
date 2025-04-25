@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories;
 
 use App\Enums\SuggestionStatus;
@@ -10,7 +12,7 @@ use Illuminate\Support\Str;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Suggestion>
  */
-class SuggestionFactory extends Factory
+final class SuggestionFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -20,6 +22,7 @@ class SuggestionFactory extends Factory
     public function definition(): array
     {
         $title = fake()->sentence(3);
+
         return [
             'title' => $title,
             'slug' => Str::slug($title),

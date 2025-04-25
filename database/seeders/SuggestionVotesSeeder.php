@@ -1,14 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
 use App\Models\Suggestion;
 use App\Models\User;
-use Database\Factories\SuggestionFactory;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class SuggestionVotesSeeder extends Seeder
+final class SuggestionVotesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -24,7 +24,7 @@ class SuggestionVotesSeeder extends Seeder
 
             foreach ($randomUsers as $user) {
                 $suggestion->votes()->attach($user->id, [
-                    'voted_at' => now()->subDays(rand(0, 30)) // Votos en los últimos 30 días
+                    'voted_at' => now()->subDays(rand(0, 30)), // Votos en los últimos 30 días
                 ]);
             }
         }

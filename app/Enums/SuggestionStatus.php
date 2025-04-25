@@ -11,6 +11,11 @@ enum SuggestionStatus: string
     case InProgress = 'in_progress';
     case Finished = 'finished';
 
+    public static function values(): array
+    {
+        return array_column(self::cases(), 'value');
+    }
+
     public function label(): string
     {
         return match ($this) {
@@ -29,10 +34,5 @@ enum SuggestionStatus: string
             self::InProgress => 'bg-blue-600',
             self::Finished => 'bg-green-600',
         };
-    }
-
-    public static function values(): array
-    {
-        return array_column(self::cases(), 'value');
     }
 }
