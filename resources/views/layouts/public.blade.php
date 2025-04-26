@@ -16,11 +16,31 @@
         @endif
     </head>
     <body class="bg-gray-900 text-white min-h-screen">
-        <header>
+        <header class="py-4">
             <nav class="w-[95%] max-w-[750px] mx-auto flex justify-between items-center">
                 <a href="{{ route('home.index') }}" class="text-2xl font-bold">
                     Suggestions
                 </a>
+                @auth
+                    <div class="flex items-center gap-x-4">
+                        <p>{{ auth()->user()->email }}</p>
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="text-white bg-blue-800 hover:bg-blue-700 text-sm font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline cursor-pointer">
+                                Logout
+                            </button>
+                        </form>
+                    </div>
+                @else
+                    <div class="flex items-center gap-x-4">
+                        <a href="{{ route('login') }}" class="text-white bg-blue-800 hover:bg-blue-700 text-sm font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline cursor-pointer">
+                            Login
+                        </a>
+                        <a href="{{ route('register') }}" class="text-white bg-blue-800 hover:bg-blue-700 text-sm font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline cursor-pointer">
+                            Register
+                        </a>
+                    </div>
+                @endauth
             </nav>
         </header>
         <main class="w-[95%] max-w-[750px] mx-auto bg-gray-600 divide-y-2 divide-gray-400 rounded-md overflow-hidden">

@@ -100,6 +100,7 @@
     // TailwindCSS/CSS Settings
     // ---------------------------------
     "tailwindCSS.emmetCompletions": true,
+    "tailwind-fold.autoFold": true,
     "tailwindCSS.includeLanguages": {
         "blade": "html"
     },
